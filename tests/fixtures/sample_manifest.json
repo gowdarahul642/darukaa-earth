@@ -1,0 +1,17 @@
+[
+  {
+    "document_id": "synthetic-test-fixture-1",
+    "file": "synthetic_doc_1.txt",
+    "metadata": {
+      "title": "[SYNTHETIC TEST FIXTURE] Placeholder Document for Ingestion Testing",
+      "source": "DARUKAA.EARTH internal test suite",
+      "organization": "SYNTHETIC TEST FIXTURE — NOT A REAL SOURCE",
+      "publication_year": 2025,
+      "url": null,
+      "topic": "pipeline testing placeholder",
+      "environmental_metrics": ["soil.organic_carbon_percent", "soil.moisture_percent"],
+      "geographic_scope": "not applicable (synthetic)",
+      "document_type": "other"
+    }
+  }
+]

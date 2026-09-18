@@ -1,0 +1,11 @@
+venv/
+.venv/
+__pycache__/
+.git/
+data/chroma/
+.pytest_cache/
+.coverage
+*.pyc
+**/__pycache__/
+**/*.pyc
+**/*.pyo

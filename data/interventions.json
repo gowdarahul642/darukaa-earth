@@ -1,0 +1,46 @@
+[
+  {
+    "id": "legume_cover_crop",
+    "action": "Introduce drought-tolerant legume cover crops during non-cropping periods.",
+    "suitable_conditions": {
+      "soil.organic_carbon_percent": {"operator": "<", "threshold": 1.0},
+      "land.cropping_system": {"operator": "in", "values": ["monoculture", "continuous", "cropland"]}
+    },
+    "target_metrics": [
+      "soil.organic_carbon_percent",
+      "soil.moisture_percent",
+      "biodiversity.species_richness"
+    ],
+    "why_it_works": "Cover crops replace bare soil periods with continuous root activity, increasing organic carbon inputs and microbial biomes.",
+    "environmental_mechanism": "Legume root exudates stimulate nitrogen fixation and mycorrhizal networks, rebuilding aggregate structure and moisture retention.",
+    "time_horizon": "Short: 1 season (moisture); Medium: 2-3 years (organic carbon)",
+    "trade_offs": [
+      "Requires careful termination timing to prevent soil water depletion before cash crop planting."
+    ],
+    "monitoring": [
+      "Measure soil organic carbon annually",
+      "Track volumetric soil moisture at 0-15 cm depth during dry transitions"
+    ]
+  },
+  {
+    "id": "native_flowering_strips",
+    "action": "Establish perennial native flowering strips along crop field borders.",
+    "suitable_conditions": {
+      "land.cropping_system": {"operator": "in", "values": ["monoculture", "continuous", "cropland"]}
+    },
+    "target_metrics": [
+      "biodiversity.pollinator_presence",
+      "biodiversity.species_richness",
+      "land.fragmentation"
+    ],
+    "why_it_works": "Field margins provide floral resources and undisturbed nesting sites for native pollinators and pest predators.",
+    "environmental_mechanism": "Diversifies micro-habitats and breaks up landscape monoculture fragmentation, raising wild pollinator density.",
+    "time_horizon": "Short: 1 season (pollinator visits); Medium: 2-4 years (established habitat)",
+    "trade_offs": [
+      "Takes a small percentage of marginal land out of primary crop production."
+    ],
+    "monitoring": [
+      "Perform seasonal wild pollinator visual transect counts during bloom periods."
+    ]
+  }
+]

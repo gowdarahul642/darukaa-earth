@@ -1,0 +1,32 @@
+[SYNTHETIC TEST FIXTURE — NOT A REAL SCIENTIFIC SOURCE]
+
+This file exists only to exercise the ingestion pipeline's text extraction,
+cleaning, and chunking logic during automated testing. It is intentionally
+long enough to be split into multiple chunks. Its content is written for
+this test suite and must never be cited, quoted, or otherwise treated as
+scientific evidence by any part of the DARUKAA.EARTH system.
+
+Placeholder passage one. Soil organic matter, moisture retention, and
+structural stability are frequently discussed together in agricultural
+science because they interact rather than acting independently. In this
+fixture text, that interaction is mentioned purely to give the chunker
+something plausible-sounding to split, not to assert any real finding.
+
+Placeholder passage two. A hyphen-
+ated word appears here on purpose so the
+cleaning step's hyphen-rejoining logic has something to fix. Multiple    
+spaces   also appear   here on purpose to test whitespace collapsing.
+
+
+Excess blank lines above and below this paragraph exist to test newline
+collapsing.
+
+42
+
+The lone number on its own line above simulates a stray page number that
+the cleaning step should remove.
+
+Placeholder passage three. This paragraph pads the document out further so
+that with a small chunk size, at least three or four chunks are produced,
+letting tests check chunk_index ordering, char_start/char_end correctness,
+and overlap between consecutive chunks without needing a huge fixture file.

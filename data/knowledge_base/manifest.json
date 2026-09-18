@@ -1,0 +1,110 @@
+[
+  {
+    "file_name": "arxiv_2404_12415v2.pdf",
+    "metadata": {
+      "title": "Prediction of soil fertility parameters using USB-microscope imagery and portable X-ray fluorescence spectrometry",
+      "source": "arXiv Preprints",
+      "organization": "arXiv",
+      "publication_year": 2024,
+      "url": "https://arxiv.org/abs/2404.12415v2",
+      "topic": "soil organic carbon restoration",
+      "environmental_metrics": [
+        "soil_organic_carbon",
+        "biodiversity",
+        "species_richness"
+      ],
+      "geographic_scope": "Global",
+      "document_type": "research"
+    }
+  },
+  {
+    "file_name": "arxiv_2108_02286v1.pdf",
+    "metadata": {
+      "title": "Organic Carbon Cycle in the Atmosphere of Venus",
+      "source": "arXiv Preprints",
+      "organization": "arXiv",
+      "publication_year": 2021,
+      "url": "https://arxiv.org/abs/2108.02286v1",
+      "topic": "soil organic carbon restoration",
+      "environmental_metrics": [
+        "soil_organic_carbon",
+        "biodiversity",
+        "species_richness"
+      ],
+      "geographic_scope": "Global",
+      "document_type": "research"
+    }
+  },
+  {
+    "file_name": "arxiv_2506_10106v1.pdf",
+    "metadata": {
+      "title": "One For All: LLM-based Heterogeneous Mission Planning in Precision Agriculture",
+      "source": "arXiv Preprints",
+      "organization": "arXiv",
+      "publication_year": 2025,
+      "url": "https://arxiv.org/abs/2506.10106v1",
+      "topic": "biodiversity monoculture agriculture",
+      "environmental_metrics": [
+        "soil_organic_carbon",
+        "biodiversity",
+        "species_richness"
+      ],
+      "geographic_scope": "Global",
+      "document_type": "research"
+    }
+  },
+  {
+    "file_name": "arxiv_1808_05643v1.pdf",
+    "metadata": {
+      "title": "Not even wrong: The spurious link between biodiversity and ecosystem functioning",
+      "source": "arXiv Preprints",
+      "organization": "arXiv",
+      "publication_year": 2018,
+      "url": "https://arxiv.org/abs/1808.05643v1",
+      "topic": "biodiversity monoculture agriculture",
+      "environmental_metrics": [
+        "soil_organic_carbon",
+        "biodiversity",
+        "species_richness"
+      ],
+      "geographic_scope": "Global",
+      "document_type": "research"
+    }
+  },
+  {
+    "file_name": "arxiv_2102_05755v2.pdf",
+    "metadata": {
+      "title": "Development of Crop Yield Estimation Model using Soil and Environmental Parameters",
+      "source": "arXiv Preprints",
+      "organization": "arXiv",
+      "publication_year": 2021,
+      "url": "https://arxiv.org/abs/2102.05755v2",
+      "topic": "cover crop soil moisture retention",
+      "environmental_metrics": [
+        "soil_organic_carbon",
+        "biodiversity",
+        "species_richness"
+      ],
+      "geographic_scope": "Global",
+      "document_type": "research"
+    }
+  },
+  {
+    "file_name": "arxiv_1603_04518v1.pdf",
+    "metadata": {
+      "title": "Human judgment vs. theoretical models for the management of ecological resources",
+      "source": "arXiv Preprints",
+      "organization": "arXiv",
+      "publication_year": 2016,
+      "url": "https://arxiv.org/abs/1603.04518v1",
+      "topic": "agroforestry ecological interaction",
+      "environmental_metrics": [
+        "soil_organic_carbon",
+        "biodiversity",
+        "species_richness"
+      ],
+      "geographic_scope": "Global",
+      "document_type": "research"
+    }
+  }
+]

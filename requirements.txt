@@ -1,0 +1,26 @@
+# ---- Core API Framework ----
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+
+# ---- Database Layer ----
+sqlalchemy==2.0.36
+
+# ---- Document Ingestion & Vector RAG ----
+pymupdf==1.25.1
+chromadb==0.5.23
+sentence-transformers==3.3.1
+
+# ---- HTTP Communication & Geospatial ----
+httpx==0.28.1
+requests==2.32.3
+geopy==2.4.1
+
+# ---- Frontend UI & Visualizations ----
+streamlit==1.41.1
+plotly==5.24.1
+
+# ---- Testing ----
+pytest==8.3.4

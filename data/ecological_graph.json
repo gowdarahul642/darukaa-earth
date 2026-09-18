@@ -1,0 +1,82 @@
+{
+  "anomalies": [
+    {
+      "metric_path": "soil.organic_carbon_percent",
+      "operator": "<",
+      "threshold": 1.0,
+      "severity_rules": [
+        {"operator": "<", "threshold": 0.5, "severity": "severe"},
+        {"operator": "<", "threshold": 1.0, "severity": "moderate"}
+      ],
+      "impact": "Depleted soil microbial biomass, compromised aggregate structure, and reduced water retention.",
+      "pressure_label": "Soil Organic Carbon Depletion"
+    },
+    {
+      "metric_path": "soil.ph",
+      "operator": "<",
+      "threshold": 5.5,
+      "severity": "severe",
+      "impact": "High soil acidity risks aluminum toxicity and severely limits phosphorus bioavailability.",
+      "pressure_label": "Soil Acidity Stress"
+    },
+    {
+      "metric_path": "soil.ph",
+      "operator": ">",
+      "threshold": 7.8,
+      "severity": "moderate",
+      "impact": "Alkaline conditions cause micronutrient lockup (iron, zinc, manganese).",
+      "pressure_label": "Soil Alkalinity Stress"
+    },
+    {
+      "metric_path": "climate.rainfall_category",
+      "operator": "in",
+      "values": ["low", "arid", "semi-arid"],
+      "severity": "moderate",
+      "impact": "Water-limited conditions reducing organic matter decomposition and vegetative growth.",
+      "pressure_label": "Moisture Stress"
+    },
+    {
+      "metric_path": "land.cropping_system",
+      "operator": "in",
+      "values": ["monoculture", "continuous"],
+      "severity": "moderate",
+      "impact": "Lack of plant species diversity suppresses root exudate variety and beneficial soil biology.",
+      "pressure_label": "Monoculture Pressure"
+    }
+  ],
+  "interactions": [
+    {
+      "required_anomalies": ["soil.organic_carbon_percent", "climate.rainfall_category"],
+      "primary_metric": "soil.organic_carbon_percent",
+      "interacting_metrics": ["climate.rainfall_category"],
+      "ecological_mechanism": "Low soil organic matter reduces water retention capacity, exacerbating drought sensitivity in low-rainfall environments.",
+      "cascading_effects": [
+        "Reduced soil microbial respiration",
+        "Accelerated soil structure collapse",
+        "Increased crop drought vulnerability"
+      ]
+    },
+    {
+      "required_anomalies": ["soil.organic_carbon_percent", "land.cropping_system"],
+      "primary_metric": "land.cropping_system",
+      "interacting_metrics": ["soil.organic_carbon_percent", "biodiversity.habitat_diversity"],
+      "ecological_mechanism": "Continuous monoculture prevents organic carbon diversification, causing micro-habitat degradation for soil biota.",
+      "cascading_effects": [
+        "Loss of ecological niches",
+        "Decreased soil biological activity",
+        "Higher pest outbreak vulnerability"
+      ]
+    },
+    {
+      "required_anomalies": ["soil.organic_carbon_percent", "soil.ph"],
+      "primary_metric": "soil.ph",
+      "interacting_metrics": ["soil.organic_carbon_percent"],
+      "ecological_mechanism": "Low organic carbon impairs soil buffering capacity, worsening nutrient immobilization caused by extreme pH levels.",
+      "cascading_effects": [
+        "Rapid pH fluctuations",
+        "Decreased root elongation and mycorrhizal colonization",
+        "Impaired macronutrient uptake"
+      ]
+    }
+  ]
+}

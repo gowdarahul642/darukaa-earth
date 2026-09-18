@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: darukaa_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_storage:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=-1
+
+  backend:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.backend
+    container_name: darukaa_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_PROVIDER=ollama
+      - LLM_BASE_URL=http://ollama:11434
+      - LLM_MODEL_NAME=gemma:2b
+    depends_on:
+      - ollama
+    volumes:
+      - ./data:/app/data
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.frontend
+    container_name: darukaa_frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+
+volumes:
+  ollama_storage:
