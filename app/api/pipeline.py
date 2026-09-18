@@ -1,12 +1,5 @@
 from typing import Dict, Optional
-from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel
 from sqlalchemy.orm import Session
-
-# Import database session dependency
-from app.api.deps import get_db
-
-# Core schemas and modules
 from app.api.schemas import ChatResponse
 from app.clarification.detector import MissingInformationDetector
 from app.extraction.extractor import EnvironmentalExtractor
@@ -16,13 +9,6 @@ from app.memory.manager import ConversationMemoryManager
 from app.reasoning.engine import MultiMetricReasoningEngine
 from app.retrieval.retriever import EnvironmentalRetriever
 from app.schemas.environmental_state import EnvironmentalState
-
-router = APIRouter(prefix="/api/v1", tags=["pipeline"])
-
-
-class ChatRequest(BaseModel):
-    message: str
-    conversation_id: Optional[str] = None
 
 
 class PipelineOrchestrator:
@@ -96,7 +82,7 @@ class PipelineOrchestrator:
                 evidence_count=0,
             )
 
-        # 2. Handle General Informational Queries
+        # 2. Handle General Informational Queries ("what is water?", "how does photosynthesis work?")
         if intent == "general_query":
             current_state = self.memory.get_profile(session_id)
             system_prompt = (
@@ -155,15 +141,3 @@ class PipelineOrchestrator:
             vulnerability_scores=vulnerability_scores,
             evidence_count=retrieval.total_retrieved,
         )
-
-
-# --- API ROUTE ENDPOINT ---
-@router.post("/chat", response_model=ChatResponse)
-async def chat_endpoint(payload: ChatRequest, db: Session = Depends(get_db)):
-    try:
-        orchestrator = PipelineOrchestrator(db=db)
-        return orchestrator.process_message(
-            message=payload.message, conversation_id=payload.conversation_id
-        )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
